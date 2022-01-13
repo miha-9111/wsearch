@@ -12,4 +12,8 @@ export class SearchBarComponent implements OnInit {
 
   ngOnInit() {}
 
+  onFormSubmit(event: any) {
+    event.preventDefault();
+    console.log(this.term);
+  }
 }
