@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { WikipediaService } from "./wikipedia.service";
 
-interface Search {
+export interface Search {
   title: string;
   snippet: string;
   pageid: number;
+  wordcount?: number;
 }
 
 @Component({
@@ -20,6 +21,7 @@ export class AppComponent {
   onTerm(term: string) {
     this.wikipedia.search(term).subscribe((pages) => {
       this.pages = pages;
+      console.log(pages);
     });
   }
 }
